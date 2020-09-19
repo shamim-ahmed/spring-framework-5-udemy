@@ -59,4 +59,34 @@ public class Author {
   public void setBooks(Set<Book> books) {
     this.books = books;
   }
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("Author[ ")
+      .append("id = " + id).append(", ")
+      .append("firstName = " + firstName).append(", ")
+      .append("lastName = " + lastName).append(" ]");
+   
+    return sb.toString();
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj) {
+      return true;
+    }
+
+    if (!(obj instanceof Author)) {
+      return false;
+    }
+
+    Author otherAuthor = (Author) obj;
+
+    return id != null ? id.equals(otherAuthor.id) : otherAuthor.id == null;
+  }
+
+  public int hashCode() {
+    return id != null ? id.hashCode() : 0;
+  }
 }
