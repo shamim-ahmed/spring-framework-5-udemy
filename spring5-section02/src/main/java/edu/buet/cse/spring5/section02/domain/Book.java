@@ -67,10 +67,8 @@ public class Book {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("Book[ ")
-      .append("id = " + id).append(", ")
-      .append("title = " + title).append(", ")
-      .append("isbn = " + isbn).append(" ]");
+    sb.append("Book[ ").append("id = " + id).append(", ").append("title = " + title).append(", ")
+        .append("isbn = " + isbn).append(" ]");
 
     return sb.toString();
   }
@@ -81,7 +79,7 @@ public class Book {
       return true;
     }
 
-    if (!(obj instanceof Book)) {
+    if (obj == null || getClass() != obj.getClass()) {
       return false;
     }
 

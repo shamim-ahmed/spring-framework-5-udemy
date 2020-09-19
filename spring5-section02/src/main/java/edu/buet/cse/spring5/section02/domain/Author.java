@@ -63,11 +63,9 @@ public class Author {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("Author[ ")
-      .append("id = " + id).append(", ")
-      .append("firstName = " + firstName).append(", ")
-      .append("lastName = " + lastName).append(" ]");
-   
+    sb.append("Author[ ").append("id = " + id).append(", ").append("firstName = " + firstName)
+        .append(", ").append("lastName = " + lastName).append(" ]");
+
     return sb.toString();
   }
 
@@ -77,7 +75,7 @@ public class Author {
       return true;
     }
 
-    if (!(obj instanceof Author)) {
+    if (obj == null || getClass() != obj.getClass()) {
       return false;
     }
 
